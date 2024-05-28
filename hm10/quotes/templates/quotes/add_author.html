@@ -1,0 +1,27 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Add Author</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Author Name:</label>
+            <input type="text" class="form-control" id="name" name="fullname" required>
+        </div>
+        <div class="mb-3">
+            <label for="birth_date" class="form-label">Birth Date:</label>
+            <input type="date" class="form-control" id="birth_date" name="born_date">
+        </div>
+        <div class="mb-3">
+            <label for="born" class="form-label">Born location:</label>
+            <input type="text" class="form-control" id="born" name="born_location" required>
+        </div>
+        <div class="mb-3">
+            <label for="descr" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="descr" name="description" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
